@@ -13,13 +13,22 @@ class MainFragment : Fragment(R.layout.main_frag) {
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
 
-
     binding.show.setOnClickListener {
       ViewCompat.getWindowInsetsController(binding.root)?.show(WindowInsetsCompat.Type.ime())
     }
 
     binding.hide.setOnClickListener {
       ViewCompat.getWindowInsetsController(binding.root)?.hide(WindowInsetsCompat.Type.ime())
+    }
+
+    binding.statusbar.setOnClickListener {
+      val controller = ViewCompat.getWindowInsetsController(binding.root)!!
+      controller.isAppearanceLightStatusBars = !controller.isAppearanceLightStatusBars
+    }
+
+    binding.navigationBar.setOnClickListener {
+      val controller = ViewCompat.getWindowInsetsController(binding.root)!!
+      controller.isAppearanceLightNavigationBars = !controller.isAppearanceLightNavigationBars
     }
   }
 }
