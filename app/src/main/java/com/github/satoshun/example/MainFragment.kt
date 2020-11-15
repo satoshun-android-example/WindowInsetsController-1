@@ -2,6 +2,8 @@ package com.github.satoshun.example
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.github.satoshun.example.databinding.MainFragBinding
 
@@ -11,8 +13,13 @@ class MainFragment : Fragment(R.layout.main_frag) {
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
 
-    binding.sample.setOnClickListener {
-      TODO()
+
+    binding.show.setOnClickListener {
+      ViewCompat.getWindowInsetsController(binding.root)?.show(WindowInsetsCompat.Type.ime())
+    }
+
+    binding.hide.setOnClickListener {
+      ViewCompat.getWindowInsetsController(binding.root)?.hide(WindowInsetsCompat.Type.ime())
     }
   }
 }

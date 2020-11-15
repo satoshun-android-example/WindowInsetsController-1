@@ -8,8 +8,14 @@
   tools:ignore="HardcodedText">
 
   <Button
-    android:id="@+id/sample"
+    android:id="@+id/show"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="Sample" />
+    android:text="Show" />
+
+  <Button
+    android:id="@+id/hide"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Hide" />
 </LinearLayout>
