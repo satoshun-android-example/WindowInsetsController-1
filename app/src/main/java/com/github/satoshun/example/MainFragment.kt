@@ -14,11 +14,13 @@ class MainFragment : Fragment(R.layout.main_frag) {
     super.onViewCreated(view, savedInstanceState)
 
     binding.show.setOnClickListener {
-      ViewCompat.getWindowInsetsController(binding.root)?.show(WindowInsetsCompat.Type.ime())
+      val controller = ViewCompat.getWindowInsetsController(binding.keyboard)!!
+      controller.show(WindowInsetsCompat.Type.ime())
     }
 
     binding.hide.setOnClickListener {
-      ViewCompat.getWindowInsetsController(binding.root)?.hide(WindowInsetsCompat.Type.ime())
+      val controller = ViewCompat.getWindowInsetsController(binding.keyboard)!!
+      controller.hide(WindowInsetsCompat.Type.ime())
     }
 
     binding.statusbar.setOnClickListener {
